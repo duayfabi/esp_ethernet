@@ -227,7 +227,7 @@ err:
 }
 #endif // CONFIG_ETHERNET_USE_SPI_ETHERNET
 
-esp_err_t example_eth_init(esp_eth_handle_t *eth_handles_out[], uint8_t *eth_cnt_out)
+esp_err_t ethernet_eth_init(esp_eth_handle_t *eth_handles_out[], uint8_t *eth_cnt_out)
 {
     esp_err_t ret = ESP_OK;
     esp_eth_handle_t *eth_handles = NULL;
