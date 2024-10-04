@@ -67,8 +67,8 @@ static esp_eth_handle_t eth_init_internal(esp_eth_mac_t **mac_out, esp_eth_phy_t
     // Init vendor specific MAC config to default
     eth_esp32_emac_config_t esp32_emac_config = ETH_ESP32_EMAC_DEFAULT_CONFIG();
     // Update vendor specific MAC config based on board configuration
-    esp32_emac_config.smi_mdc_gpio_num = CONFIG_ETHERNET_ETH_MDC_GPIO;
-    esp32_emac_config.smi_mdio_gpio_num = CONFIG_ETHERNET_ETH_MDIO_GPIO;
+    esp32_emac_config.smi_gpio.mdc_num = CONFIG_ETHERNET_ETH_MDC_GPIO;
+    esp32_emac_config.smi_gpio.mdio_num = CONFIG_ETHERNET_ETH_MDIO_GPIO;
     // Create new ESP32 Ethernet MAC instance
     esp_eth_mac_t *mac = esp_eth_mac_new_esp32(&esp32_emac_config, &mac_config);
     // Create new PHY instance based on board configuration
